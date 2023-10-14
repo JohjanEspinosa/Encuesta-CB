@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical */
+    max-height: 90vh; /* Altura máxima para evitar que el contenedor sea demasiado largo */
+}
+.login-container {
+    background: linear-gradient(to bottom right, #007BFF, #0056b3);
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilos de la caja de inicio de sesión */
+.login-box {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #007BFF;
+}
+
+a {
+    text-align: center;
+}
+
+.textbox {
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center; /* Centra horizontalmente */
+    vertical-align: middle; /* Centra verticalmente */
+    margin-right: 10px; 
+}
+
+legend {
+    font-weight: bold;
+}
+h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+h2 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* Estilos para pantallas más pequeñas (responsividad) */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0px 0 0;
+    }
+
+    .container {
+        margin: 0px;
+    }
+}
+/* Estilos para las secciones */
+.relations, .comments, 
+.knowledge, .productivity, 
+.work-quality, .additional-aspects {
+    margin-bottom: 20px;
+}
+
+h2 {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #007BFF;
+    color: #007BFF;
+    font-size: 16px;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder {
+    color: #007BFF;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la lista desplegable */
+select#evaluado, #cargo {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Cambia el aspecto del puntero del mouse cuando se coloca sobre la lista desplegable */
+select#evaluado:hover {
+    cursor: pointer;
+}
+
+.obligatorio {
+    color: red; /* Color del texto rojo para indicar la obligatoriedad */
+    font-size: 14px; /* Tamaño de fuente opcional */
+}
+

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Encuesta-CB</title>
+</head>
+<body>
+    <!-- Agrega esto a encuesta.html -->
+    <div class="container" id="encuesta">
+        <a href="cerrar_sesion.php">Cerrar Sesión</a>
+        <h1>AUTOEVALUACIÓN DEL EMPLEADO</h1>
+        <form  id="login-form" action="procesar_encuesta.php" method="post">
+            <div class="question">
+                <!-- Lista desplegable de personas a evaluar -->
+        <h2>Selecciona a la persona a evaluar:</h2>
+        <select id="evaluado" name="evaluado" onchange="mostrarNombre()">
+            <option value="Luis" data-name="Luis">Luis</option>
+            <option value="Carlos" data-name="Carlos">Carlos</option>
+            <option value="Andres" data-name="Andres">Andres</option>
+        <!-- Agrega más nombres según sea necesario -->
+        </select>
+        
+                <!--Grupo del criterio-->
+                <h2>Comportamientos</h2>
+                <br>
+                    <fieldset>
+                    <legend>Pregunta 1: Puntualidad (cumplimiento jornada laboral)</legend>
+                    <label>
+                        <input type="radio" name="pregunta1" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta1" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta1" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta1" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta1" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 2: Sentido de pertenencia (sentirse identificado con los valores institucionales)</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta2" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta2" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta2" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta2" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta2" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 3: Trabajo en equipo (compañerismo/colegaje)</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta3" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta3" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta3" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta3" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta3" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 4: Liderazgo (capacidad de delegar y coordinar al grupo de trabajo)</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta4" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta4" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta4" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta4" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta4" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 5: Actitud hacia compañeros de trabajo (superiores, colegas y subordinados)</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta5" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta5" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta5" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta5" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta5" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 6: Asertividad en el trato hacia el suaurio (pacientes y/o acompañantes)</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta6" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta6" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta6" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta6" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta6" value="excelente" required>
+                        Excelente
+                    </label>
+                </fieldset>
+                <br>
+            </div>
+            <!--Grupo del criterio-->
+            <div class="relations">
+                <h2>Relaciones interpersonales</h2>
+                <br>
+                <fieldset>
+                    <legend>Pregunta 1: Comunicación con el equipo de trabajo</legend>
+                    <label>
+                        <input type="radio" name="pregunta7" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta7" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta7" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta7" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta7" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 2: Receptividad ante críticas</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta8" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta8" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta8" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta8" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta8" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 3: Manejo de conflictos</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta9" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta9" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta9" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta9" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta9" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                </fieldset>
+            </div>
+            <!--Grupo del criterio-->
+            <div class="knowledge">
+                <h2>Conocimientos</h2>
+                <br>
+                <fieldset>
+                    <legend>Pregunta 1: Grado de conocimiento técnico (conceptos teórico-prácticos de su profesión)</legend>
+                    <label>
+                        <input type="radio" name="pregunta10" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta10" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta10" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta10" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta10" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 2: Dominio de sus funciones dentro de la organización</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta11" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta11" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta11" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta11" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta11" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 3: Realización de registros pertinentes</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta12" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta12" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta12" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta12" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta12" value="excelente" required>
+                        Excelente
+                    </label>
+                </fieldset>
+            </div>
+            <div class="productivity">
+                <h2>Productividad</h2>
+                <br>
+                <fieldset>
+                    <legend>Pregunta 1: Capacidad para desempeñar su trabajo, utilizando adecuadamente el tiempo.</legend>
+                    <label>
+                        <input type="radio" name="pregunta13" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta13" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta13" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta13" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta13" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                </fieldset>
+            </div>
+            <div class="work-quality">
+                <h2>Calidad del trabajo</h2>
+                <br>
+                <fieldset>
+                    <legend>Pregunta 1: Satisfacción de las tareas que realiza.</legend>
+                    <label>
+                        <input type="radio" name="pregunta14" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta14" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta14" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta14" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta14" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                </fieldset>
+            </div>
+            <div class="additional-aspects">
+                <h2>Aspectos adicionales</h2>
+                <br>
+                <fieldset>
+                    <legend>Pregunta 1: Participación en actividades programadas.</legend>
+                    <label>
+                        <input type="radio" name="pregunta15" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta15" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta15" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta15" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta15" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 2: Resultado de evaluación de conocimientos.</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta16" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta16" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta16" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta16" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta16" value="excelente" required>
+                        Excelente
+                    </label>
+                    <br>
+                    <legend>Pregunta 3: Actualización hoja de vida (presenta soportes oportunamente).</legend>
+                    <br>
+                    <label>
+                        <input type="radio" name="pregunta17" value="deficiente" required>
+                        Deficiente
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta17" value="no_cumple_expectativas" required>
+                        No cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta17" value="apenas cumple_expectativas" required>
+                        Apenas cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta17" value="cumple_expectativas" required>
+                        Cumple con las expectativas
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta17" value="excelente" required>
+                        Excelente
+                    </label>
+                </fieldset>
+            </div>
+
+            <!-- Agregar más preguntas aquí... -->
+
+            <div class="comments">
+                <h2>Comentarios adicionales</h2>
+                <br>
+                <label for="comentarios">Observaciones:</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            </div>
+            
+            <button type="submit">Enviar Encuesta</button>
+        </form>
+    </div>
+    <div id="confirmation" style="display: none;">
+        <p>Tu encuesta ha sido enviada con éxito. ¡Gracias por tu participación!</p>
+    </div>    
+    <script src="script.js"></script>
+</body>
+</html>

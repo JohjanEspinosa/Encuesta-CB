@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EncuestaCB</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+        <!-- Formulario de registro -->
+<form id="registro-form" action="procesar_registro.php" method="post">
+    <!-- Campos del formulario de registro -->
+    <div class="container">
+        <h1>Registro</h1>
+        <div class="textbox">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username_registro" name="username_registro" placeholder="Nombre de Usuario" required >
+        </div>
+        <div class="textbox">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+        </div>
+        <div class="textbox">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password_registro" name="password_registro" placeholder="Contraseña" required oninput="validarContraseña()">
+        </div>
+        <!--
+            <div class="textbox">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar Contraseña" required oninput="validarContraseña()">
+        </div>
+        -->
+        <div class="textbox">
+            <i class="fas fa-briefcase"></i>
+            <select id="cargo" name="cargo" required>
+                <option value="" disabled selected>Selecciona tu cargo</option>
+                <option value="gerente">Gerente</option>
+                <option value="jefe-enfermeria">Jefe de Enfermeria</option>
+                <option value="jefe-facturacion">Jefe Facturación</option>
+                <option value="jefe-mantenimiento">Jefe de Mantenimiento</option>
+                <option value="medico-general">Medico General</option>
+                <option value="auxiliar-enfermeria">Auxiliar de Enfermeria</option>
+                <option value="recepcionista">Recepcionista</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+        </div>
+    </div>
+    <!-- Botón para registrarse -->
+    <button type="submit" id="register-btn">Registrarse</button>
+    <a href="index.html">Iniciar Sesion</a>
+</form>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/4161d153de.js" crossorigin="anonymous"></script>
+</body>
+</html>
